@@ -20,13 +20,11 @@ abstract class LivingEntityMixin extends Entity {
 
     @Shadow public abstract float getMaxHealth();
 
-    @Shadow protected double serverX;
-
     public LivingEntityMixin(World world) {
         super(world);
     }
     // y this.getBodyY(0.0625D)
-    @Inject(method = "onDeath", at = @At(value = "HEAD"))
+    @Inject(method = "onKilled", at = @At(value = "HEAD"))
     public void onDeath(DamageSource source, CallbackInfo ci){
         if (this.getMaxHealth() > 2.0f & this.world instanceof ServerWorld){
             this.world.createExplosion(this, this.x, this.y, this.z,

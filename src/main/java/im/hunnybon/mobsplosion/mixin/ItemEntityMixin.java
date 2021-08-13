@@ -20,7 +20,7 @@ abstract class ItemEntityMixin extends Entity {
 
     @Shadow private int age;
 
-    @Shadow public abstract ItemStack getStack();
+    @Shadow public abstract ItemStack getItemStack();
 
     public ItemEntityMixin(World world) {
         super(world);
@@ -37,7 +37,7 @@ abstract class ItemEntityMixin extends Entity {
     public void tick(CallbackInfo ci){
         if (!this.world.isClient && this.age >= 6000) {
             this.world.createExplosion(this, this.x, this.y, this.z,
-                    this.getStack().getMaxCount() / 7.0f, Mobsplosion.config.destroyBlocks, Mobsplosion.config.createsFire);
+                    this.getItemStack().getMaxCount() / 7.0f, Mobsplosion.config.destroyBlocks, Mobsplosion.config.createsFire);
             this.remove();
         }
     }
