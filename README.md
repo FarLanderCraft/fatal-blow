@@ -1,21 +1,16 @@
-<div align="center">
+# Fabric Example Mod
 
-<img alt="Example Icon" src="src/main/resources/assets/mobsplosion/icon.png" width="128">
+## Setup
 
-# Fatal Blow
-(aka "mobsplosion")
+1. Edit build.gradle and mod.json to suit your needs.
+    * The "mixins" object can be removed from mod.json if you do not need to use mixins.
+    * Please replace all occurences of "modid" with your own mod ID - sometimes, a different string may also suffice.
+2. Run the following command:
 
-[![Get it on Modrinth!](https://img.shields.io/static/v1?label=&message=Get+it+on+Modrinth!&color=2ea44f&style=for-the-badge)](https://modrinth.com/mod/fatal-blow)
+```
+./gradlew idea
+```
 
-A simple mixin mod that causes mobs to explode on
-death, with a power defined by their maximum health.
+## License
 
-Fatal Blow was built on the Fabric modloader!
-
-</div>
-
-# Contributions
-Contributions are welcome! I may not be able to look around at pull requests all the time, this is just a small little project I did to play with mixins, after all, but improvements would be appreciated.
-
-# Forge?
-🐸?
+This template is available under the CC0 license. Feel free to learn from it and incorporate it in your own projects.
